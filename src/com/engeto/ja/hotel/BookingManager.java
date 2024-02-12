@@ -11,8 +11,10 @@ public class BookingManager {
         bookingList.add(booking);
     }
 
-    public void removeBooking(Booking booking) {
-        bookingList.remove(booking);
+
+    public void getBooking(Booking booking) {
+        int i=0;
+        bookingList.get(i);
     }
 
     public List<Booking> getBookings() {
@@ -27,7 +29,5 @@ public class BookingManager {
     //    bookingList.size();
     //  }
 
-    public void getAverageGuests(Booking booking) {
 
-    }
 }
