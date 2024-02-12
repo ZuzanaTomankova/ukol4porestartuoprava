@@ -45,10 +45,10 @@ public class Guest {
 
     @Override
     public String toString() {
-        return "Guest{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birth=" + birth +
-                '}';
+        return
+                " " + name +
+                " " + surname +
+                " (" + birth +
+                ") ";
     }
 }

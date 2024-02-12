@@ -65,10 +65,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room " +
-                "number=" + number +
-                ", numberOfBeds=" + numberOfBeds +
-                ", balcony=" + balcony +
+        return
                 ", seaView=" + seaView +
                 ", pricePerNight=" + pricePerNight
                 ;
