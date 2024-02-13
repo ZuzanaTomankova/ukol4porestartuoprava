@@ -62,7 +62,6 @@ public class Main {
 
         List<Booking> bookingList = bookingManager.getBookings();
 
-
         for (Booking booking : bookingList) {
            // if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: " + booking.getGuest() + " od  "
             //        + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
