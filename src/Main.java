@@ -64,19 +64,36 @@ public class Main {
 
 
         for (Booking booking : bookingList) {
-            if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: " + booking.getGuest() + " od  "
-                    + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: " + booking.getNumberOfGuests());
+           // if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: " + booking.getGuest() + " od  "
+            //        + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
+            //        + booking.getNumberOfGuests());
 
         }
 
+        System.out.println("----------------------------");
+        System.out.println("Prvních osum hostů rekreačního pobytu: ");
+
+        List<Booking> holidayStay = new ArrayList<>();
+        for (Booking booking : bookingList) {
+            if (!booking.isBusinessStay()) holidayStay.add(booking);}
+
+        for (int i = 1; i <= 8; i = i + 1) {
+            System.out.println("Rekreační pobyt: "+holidayStay.get(i));
+        }
+
+
+
 
         System.out.println("-----------------------------------------------");
-        System.out.println("Průměrný počet rezervací na jednoho hosta: " + (double) (bookingList.size() + otherGuests.size()) / guestList.size());
+        System.out.println("Průměrný počet rezervací na jednoho hosta: " + (double) (bookingList.size() +
+                otherGuests.size()) / guestList.size());
 
         System.out.println("-----------------------------------------------");
+        System.out.println("Výpis hostů: ");
         for (Booking booking : bookingList) {
             System.out.println("Pobyt: " + booking.getGuest() + booking.getRoom() +
-                    " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: " + booking.getNumberOfGuests());
+                    " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
+                    + booking.getNumberOfGuests());
 
 
         }
