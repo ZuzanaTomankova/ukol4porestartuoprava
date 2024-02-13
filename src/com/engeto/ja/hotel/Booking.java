@@ -84,12 +84,14 @@ public class Booking {
     }
 //endregion
 
-    public void getBookingLength(LocalDate startOfStay, LocalDate endOfStay){
-        BigDecimal daysBetween = BigDecimal.valueOf(ChronoUnit.DAYS.between(startOfStay, endOfStay));
+    public long getBookingLength(){
+        long daysBetween = ChronoUnit.DAYS.between(startOfStay, endOfStay);
+        return daysBetween;
     }
 
-    public void getTotalPrice(BigDecimal pricePerNight, BigDecimal daysBetween){
-        BigDecimal totalPrice = pricePerNight.multiply(daysBetween);
+    public BigDecimal getTotalPrice(){
+        BigDecimal totalPrice = room.getPricePerNight().multiply(BigDecimal.valueOf(getBookingLength()));
+        return totalPrice;
     }
 
 
