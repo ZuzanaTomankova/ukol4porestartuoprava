@@ -62,25 +62,14 @@ public class Main {
 
         List<Booking> bookingList = bookingManager.getBookings();
 
-        for (Booking booking : bookingList) {
+        //for (Booking booking : bookingList) {
            // if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: " + booking.getGuest() + " od  "
             //        + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
             //        + booking.getNumberOfGuests());
 
-        }
+      //  }
 
-        System.out.println("----------------------------");
-        System.out.println("Prvních osum hostů rekreačního pobytu: ");
-
-        List<Booking> holidayStay = new ArrayList<>();
-        for (Booking booking : bookingList) {
-            if (!booking.isBusinessStay()) holidayStay.add(booking);}
-
-        for (int i = 1; i <= 8; i = i + 1) {
-            System.out.println("Rekreační pobyt: "+holidayStay.get(i));
-        }
-
-
+        printEightFirst(bookingList);
 
 
         System.out.println("-----------------------------------------------");
@@ -113,6 +102,11 @@ public class Main {
             else
                 threeGuestList.add(booking);}
 
+        for (Booking booking : bookingList) {
+            System.out.println("Cena rezervace: " +booking.getGuest() +booking.getTotalPrice());
+        }
+
+
         System.out.println("Statistika hostů:");
         System.out.println("Počet rezervací s jedním hostem: "+oneGuestList.size());
         System.out.println("Počet rezervací se dvěma hosty: "+twoGuestList.size());
@@ -121,8 +115,18 @@ public class Main {
 
     }
 
+    private static void printEightFirst(List<Booking> bookingList) {
+        System.out.println("----------------------------");
+        System.out.println("Prvních osum hostů rekreačního pobytu: ");
 
+        List<Booking> holidayStay = new ArrayList<>();
+        for (Booking booking : bookingList) {
+            if (!booking.isBusinessStay()) holidayStay.add(booking);}
 
+        for (int i = 1; i <= 8; i = i + 1) {
+            System.out.println("Rekreační pobyt: "+holidayStay.get(i));
+        }
+    }
 
 
 }
