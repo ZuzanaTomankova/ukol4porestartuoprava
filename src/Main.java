@@ -6,6 +6,7 @@ import com.engeto.ja.hotel.Guest;
 import com.engeto.ja.hotel.Room;
 
 import java.math.BigDecimal;
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -99,7 +100,7 @@ public class Main {
             System.out.println("Cena rezervace: " +booking.getGuest() +booking.getTotalPrice());
         }
 
-
+        System.out.println("---------------------------------------");
         System.out.println("Statistika hostů:");
         System.out.println("Počet rezervací s jedním hostem: "+oneGuestList.size());
         System.out.println("Počet rezervací se dvěma hosty: "+twoGuestList.size());
