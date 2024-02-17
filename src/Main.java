@@ -62,19 +62,12 @@ public class Main {
 
         List<Booking> bookingList = bookingManager.getBookings();
 
-        //for (Booking booking : bookingList) {
-           // if (!booking.isBusinessStay()) System.out.println("Rekreační pobyt: " + booking.getGuest() + " od  "
-            //        + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
-            //        + booking.getNumberOfGuests());
-
-      //  }
+        getNumberOfWorkingBookings(bookingList);
 
         printEightFirst(bookingList);
 
 
-        System.out.println("-----------------------------------------------");
-        System.out.println("Průměrný počet rezervací na jednoho hosta: " + (double) (bookingList.size() +
-                otherGuests.size()) / guestList.size());
+        getAverageGuests(bookingList, otherGuests, guestList);
 
         System.out.println("-----------------------------------------------");
         System.out.println("Výpis hostů: ");
@@ -89,7 +82,7 @@ public class Main {
         System.out.println("Seznam rezervací: "+bookingManager.getBookings());
 
         System.out.println("-------------------------");
-        // System.out.println(bookingManager.getNumberOfWorkingBookings()); toto mi nechodí
+
 
         List<Booking> oneGuestList = new ArrayList<>();
         List<Booking> twoGuestList = new ArrayList<>();
@@ -113,6 +106,19 @@ public class Main {
         System.out.println("Počet rezervací se třemi a více hosty: "+threeGuestList.size());
 
 
+    }
+
+    private static void getAverageGuests(List<Booking> bookingList, List<Guest> otherGuests, List<Guest> guestList) {
+        System.out.println("-----------------------------------------------");
+        System.out.println("Průměrný počet rezervací na jednoho hosta: " + (double) (bookingList.size() +
+                otherGuests.size()) / guestList.size());
+    }
+
+    private static void getNumberOfWorkingBookings(List<Booking> bookingList) {
+        List<Booking> businessStay = new ArrayList<>();
+        for (Booking booking : bookingList) {
+            if (!booking.isBusinessStay()) businessStay.add(booking);}
+        System.out.println("Počet pracovních pobytů: " +businessStay.size());
     }
 
     private static void printEightFirst(List<Booking> bookingList) {
