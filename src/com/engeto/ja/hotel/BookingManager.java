@@ -12,16 +12,15 @@ public class BookingManager {
     }
 
 
-    public void getBooking(Booking booking) {
-        int i=0;
-        bookingList.get(i);
+    public Booking getBooking(int index) {
+        return bookingList.get(index);
     }
 
     public List<Booking> getBookings() {
         return new ArrayList<>(bookingList);
     }
 
-    public void clearBookings(Booking booking) {
+    public void clearBookings() {
         bookingList.clear();
     }
 
