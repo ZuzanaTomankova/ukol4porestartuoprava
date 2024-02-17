@@ -66,8 +66,9 @@ public class Room {
     @Override
     public String toString() {
         return
-                ", seaView=" + seaView +
-                ", pricePerNight=" + pricePerNight
-                ;
+                " " + isSeaView()
+                        ;
+
+
     }
 }

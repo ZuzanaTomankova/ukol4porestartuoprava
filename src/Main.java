@@ -65,11 +65,10 @@ public class Main {
         getAverageGuests(bookingList, otherGuests, guestList);
 
         System.out.println("-----------------------------------------------");
-        System.out.println("Výpis hostů: ");
+        System.out.println("Výpis všech rezervací: ");
         for (Booking booking : bookingList) {
-            System.out.println("Pobyt: " + booking.getGuest() + booking.getRoom() +
-                    " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
-                    + booking.getNumberOfGuests()+"   "+booking.getTotalPrice()+"Kč");
+            System.out.println( booking.getStartOfStay() + "  až  " + booking.getEndOfStay() + " "+booking.getGuest()+
+                    "["+ booking.getNumberOfGuests()+", "+booking.getRoom()+" ]  "+booking.getTotalPrice()+"Kč");
 
 
         }
