@@ -54,12 +54,6 @@ public class Main {
                 LocalDate.of(2023, 8, 31), false));
 
 
-        System.out.println("Rooms available:");
-
-
-        System.out.println(room1 + "Kč");
-        System.out.println(room2 + "Kč");
-        System.out.println(room3 + "Kč");
 
         List<Booking> bookingList = bookingManager.getBookings();
 
@@ -75,16 +69,18 @@ public class Main {
         for (Booking booking : bookingList) {
             System.out.println("Pobyt: " + booking.getGuest() + booking.getRoom() +
                     " od  " + booking.getStartOfStay() + "  do  " + booking.getEndOfStay() + " Počet hostů: "
-                    + booking.getNumberOfGuests());
+                    + booking.getNumberOfGuests()+"   "+booking.getTotalPrice()+"Kč");
 
 
         }
-        System.out.println("-----------------------");
-        System.out.println("Seznam rezervací: "+bookingManager.getBookings());
-
-        System.out.println("-------------------------");
 
 
+        printGuestStatistics(bookingList);
+
+
+    }
+
+    private static void printGuestStatistics(List<Booking> bookingList) {
         List<Booking> oneGuestList = new ArrayList<>();
         List<Booking> twoGuestList = new ArrayList<>();
         List<Booking> threeGuestList = new ArrayList<>();
@@ -96,18 +92,14 @@ public class Main {
             else
                 threeGuestList.add(booking);}
 
-        for (Booking booking : bookingList) {
-            System.out.println("Cena rezervace: " +booking.getGuest() +booking.getTotalPrice());
-        }
 
         System.out.println("---------------------------------------");
         System.out.println("Statistika hostů:");
-        System.out.println("Počet rezervací s jedním hostem: "+oneGuestList.size());
+        System.out.println("Počet rezervací s jedním hostem: "+ oneGuestList.size());
         System.out.println("Počet rezervací se dvěma hosty: "+twoGuestList.size());
-        System.out.println("Počet rezervací se třemi a více hosty: "+threeGuestList.size());
-
-
+        System.out.println("Počet rezervací se třemi a více hosty: "+ threeGuestList.size());
     }
+
 
     private static void getAverageGuests(List<Booking> bookingList, List<Guest> otherGuests, List<Guest> guestList) {
         System.out.println("-----------------------------------------------");
