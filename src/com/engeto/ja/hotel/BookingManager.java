@@ -24,9 +24,6 @@ public class BookingManager {
         bookingList.clear();
     }
 
-    // public int getNumberOfWorkingBookings(){       toto mi nechodí
-    //    bookingList.size();
-    //  }
 
 
 }
