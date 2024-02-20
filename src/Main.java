@@ -102,7 +102,6 @@ public class Main {
         System.out.println("Počet rezervací se třemi a více hosty: "+ threeGuestList.size());
     }
 
-
     private static void getAverageGuests(List<Booking> bookingList, List<Guest> otherGuests, List<Guest> guestList) {
         System.out.println("-----------------------------------------------");
         System.out.println("Průměrný počet rezervací na jednoho hosta: " + (double) (bookingList.size() +
