@@ -36,23 +36,7 @@ public class Main {
         Room room3 = new Room(3, 3, false, true, BigDecimal.valueOf(2400));
 
         BookingManager bookingManager = new BookingManager();
-        bookingManager.addBooking(new Booking(room1, guest1, null, 1, LocalDate.of(2021, 7, 19),
-                LocalDate.of(2021, 7, 26), true));
-        bookingManager.addBooking(new Booking(room3, guest1, otherGuests, 2, LocalDate.of(2021, 7, 19),
-                LocalDate.of(2021, 7, 26), true));
-        bookingManager.addBooking(new Booking(room3, guest3, null, 1, LocalDate.of(2021, 9, 1),
-                LocalDate.of(2021, 9, 14), true));
-        bookingManager.addBooking(new Booking(room2, guest4, null, 1, LocalDate.of(2023, 7, 18),
-                LocalDate.of(2023, 7, 21), false));
-
-        for (int i = 1; i <= 20; i = i + 2) {
-            bookingManager.addBooking(new Booking(room2, guest5, null, 1, LocalDate.of(2023, 8, i),
-                    LocalDate.of(2023, 8, i + 1), false));
-        }
-
-        bookingManager.addBooking(new Booking(room3, guest5, null, 1, LocalDate.of(2023, 8, 1),
-                LocalDate.of(2023, 8, 31), false));
-
+        fillBookings(bookingManager, room1, guest1, room3, otherGuests, guest3, room2, guest4, guest5);
 
 
         List<Booking> bookingList = bookingManager.getBookings();
@@ -77,6 +61,25 @@ public class Main {
         printGuestStatistics(bookingList);
 
 
+    }
+
+    private static void fillBookings(BookingManager bookingManager, Room room1, Guest guest1, Room room3, List<Guest> otherGuests, Guest guest3, Room room2, Guest guest4, Guest guest5) {
+        bookingManager.addBooking(new Booking(room1, guest1, null, 1, LocalDate.of(2021, 7, 19),
+                LocalDate.of(2021, 7, 26), true));
+        bookingManager.addBooking(new Booking(room3, guest1, otherGuests, 2, LocalDate.of(2021, 7, 19),
+                LocalDate.of(2021, 7, 26), true));
+        bookingManager.addBooking(new Booking(room3, guest3, null, 1, LocalDate.of(2021, 9, 1),
+                LocalDate.of(2021, 9, 14), true));
+        bookingManager.addBooking(new Booking(room2, guest4, null, 1, LocalDate.of(2023, 7, 18),
+                LocalDate.of(2023, 7, 21), false));
+
+        for (int i = 1; i <= 20; i = i + 2) {
+            bookingManager.addBooking(new Booking(room2, guest5, null, 1, LocalDate.of(2023, 8, i),
+                    LocalDate.of(2023, 8, i + 1), false));
+        }
+
+        bookingManager.addBooking(new Booking(room3, guest5, null, 1, LocalDate.of(2023, 8, 1),
+                LocalDate.of(2023, 8, 31), false));
     }
 
     private static void printGuestStatistics(List<Booking> bookingList) {
