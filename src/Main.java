@@ -45,8 +45,8 @@ public class Main {
 
         printEightFirst(bookingList);
 
+        bookingManager.getAverageGuests();
 
-        getAverageGuests(bookingList, otherGuests, guestList);
 
         System.out.println("-----------------------------------------------");
         System.out.println("Výpis všech rezervací: ");
@@ -102,11 +102,7 @@ public class Main {
         System.out.println("Počet rezervací se třemi a více hosty: "+ threeGuestList.size());
     }
 
-    private static void getAverageGuests(List<Booking> bookingList, List<Guest> otherGuests, List<Guest> guestList) {
-        System.out.println("-----------------------------------------------");
-        System.out.println("Průměrný počet rezervací na jednoho hosta: " + (double) (bookingList.size() +
-                otherGuests.size()) / guestList.size());
-    }
+
 
     private static void getNumberOfWorkingBookings(List<Booking> bookingList) {
         List<Booking> businessStay = new ArrayList<>();
